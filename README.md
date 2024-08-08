@@ -7,3 +7,9 @@ some CRUD functionality as well as Source Control. We have chosen to do a schedu
 <br/>
 
 ### **Stay tuned for updates !**
+
+## Current Form layout 
+![image](https://github.com/user-attachments/assets/76987c84-a8ac-4b42-b87a-1a79e8dfc5a8)
+
+## Add to schedule form
+![image](https://github.com/user-attachments/assets/cae84be3-47b4-457d-9492-7a3d7137f825)
