@@ -28,12 +28,80 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Form1";
+			btnDisplay = new Button();
+			btnAdd = new Button();
+			btnDelete = new Button();
+			lblTitle = new Label();
+			listView1 = new ListView();
+			SuspendLayout();
+			// 
+			// btnDisplay
+			// 
+			btnDisplay.Location = new Point(98, 344);
+			btnDisplay.Name = "btnDisplay";
+			btnDisplay.Size = new Size(165, 107);
+			btnDisplay.TabIndex = 0;
+			btnDisplay.Text = "Display Schedule";
+			btnDisplay.UseVisualStyleBackColor = true;
+			// 
+			// btnAdd
+			// 
+			btnAdd.Location = new Point(333, 344);
+			btnAdd.Name = "btnAdd";
+			btnAdd.Size = new Size(165, 107);
+			btnAdd.TabIndex = 1;
+			btnAdd.Text = "Add to schedule";
+			btnAdd.UseVisualStyleBackColor = true;
+			// 
+			// btnDelete
+			// 
+			btnDelete.Location = new Point(555, 344);
+			btnDelete.Name = "btnDelete";
+			btnDelete.Size = new Size(175, 107);
+			btnDelete.TabIndex = 2;
+			btnDelete.Text = "Delete Event";
+			btnDelete.UseVisualStyleBackColor = true;
+			// 
+			// lblTitle
+			// 
+			lblTitle.AutoSize = true;
+			lblTitle.Location = new Point(304, 34);
+			lblTitle.Name = "lblTitle";
+			lblTitle.Size = new Size(194, 15);
+			lblTitle.TabIndex = 4;
+			lblTitle.Text = "Welcome to the schedule  manager";
+			// 
+			// listView1
+			// 
+			listView1.Location = new Point(98, 81);
+			listView1.Name = "listView1";
+			listView1.Size = new Size(632, 212);
+			listView1.TabIndex = 5;
+			listView1.UseCompatibleStateImageBehavior = false;
+			// 
+			// Form1
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(832, 511);
+			Controls.Add(listView1);
+			Controls.Add(lblTitle);
+			Controls.Add(btnDelete);
+			Controls.Add(btnAdd);
+			Controls.Add(btnDisplay);
+			Name = "Form1";
+			Text = "Form1";
+			Load += Form1_Load;
+			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
+
+		private Button btnDisplay;
+		private Button btnAdd;
+		private Button btnDelete;
+		private Label lblTitle;
+		private ListView listView1;
 	}
 }
