@@ -32,7 +32,7 @@
 			btnAdd = new Button();
 			btnDelete = new Button();
 			lblTitle = new Label();
-			listView1 = new ListView();
+			listViewSchedule = new ListView();
 			SuspendLayout();
 			// 
 			// btnDisplay
@@ -71,20 +71,20 @@
 			lblTitle.TabIndex = 4;
 			lblTitle.Text = "Welcome to the schedule  manager";
 			// 
-			// listView1
+			// listViewSchedule
 			// 
-			listView1.Location = new Point(98, 81);
-			listView1.Name = "listView1";
-			listView1.Size = new Size(632, 212);
-			listView1.TabIndex = 5;
-			listView1.UseCompatibleStateImageBehavior = false;
+			listViewSchedule.Location = new Point(98, 81);
+			listViewSchedule.Name = "listViewSchedule";
+			listViewSchedule.Size = new Size(632, 212);
+			listViewSchedule.TabIndex = 5;
+			listViewSchedule.UseCompatibleStateImageBehavior = false;
 			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(832, 511);
-			Controls.Add(listView1);
+			Controls.Add(listViewSchedule);
 			Controls.Add(lblTitle);
 			Controls.Add(btnDelete);
 			Controls.Add(btnAdd);
@@ -102,6 +102,6 @@
 		private Button btnAdd;
 		private Button btnDelete;
 		private Label lblTitle;
-		private ListView listView1;
+		private ListView listViewSchedule;
 	}
 }
