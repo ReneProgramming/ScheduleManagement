@@ -20,40 +20,63 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			btnDeleteExit = new Button();
-			SuspendLayout();
-			// 
-			// btnDeleteExit
-			// 
-			btnDeleteExit.Location = new Point(263, 283);
-			btnDeleteExit.Name = "btnDeleteExit";
-			btnDeleteExit.Size = new Size(204, 116);
-			btnDeleteExit.TabIndex = 0;
-			btnDeleteExit.Text = "Exit";
-			btnDeleteExit.UseVisualStyleBackColor = true;
-			// 
-			// DeleteEventForm
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
-			Controls.Add(btnDeleteExit);
-			Name = "DeleteEventForm";
-			Text = "DeleteEventForm";
-			Load += DeleteEventForm_Load;
-			ResumeLayout(false);
-		}
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnDeleteExit = new Button();
+            listViewEvents = new ListView();
+            btnDeleteEvent = new Button();
+            SuspendLayout();
+            // 
+            // btnDeleteExit
+            // 
+            btnDeleteExit.Location = new Point(436, 291);
+            btnDeleteExit.Name = "btnDeleteExit";
+            btnDeleteExit.Size = new Size(204, 116);
+            btnDeleteExit.TabIndex = 0;
+            btnDeleteExit.Text = "Exit";
+            btnDeleteExit.UseVisualStyleBackColor = true;
+            // 
+            // listViewEvents
+            // 
+            listViewEvents.Location = new Point(104, 35);
+            listViewEvents.Name = "listViewEvents";
+            listViewEvents.Size = new Size(563, 228);
+            listViewEvents.TabIndex = 1;
+            listViewEvents.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnDeleteEvent
+            // 
+            btnDeleteEvent.Location = new Point(104, 291);
+            btnDeleteEvent.Name = "btnDeleteEvent";
+            btnDeleteEvent.Size = new Size(234, 116);
+            btnDeleteEvent.TabIndex = 2;
+            btnDeleteEvent.Text = "Delete event";
+            btnDeleteEvent.UseVisualStyleBackColor = true;
+            // 
+            // DeleteEventForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnDeleteEvent);
+            Controls.Add(listViewEvents);
+            Controls.Add(btnDeleteExit);
+            Name = "DeleteEventForm";
+            Text = "DeleteEventForm";
+            Load += DeleteEventForm_Load;
+            ResumeLayout(false);
+        }
 
-		#endregion
+        #endregion
 
-		private Button btnDeleteExit;
-	}
+        private Button btnDeleteExit;
+        private ListView listViewEvents;
+        private Button btnDeleteEvent;
+    }
 }
