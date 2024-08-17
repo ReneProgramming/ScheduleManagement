@@ -102,7 +102,7 @@
             btnAddEvent.Name = "btnAddEvent";
             btnAddEvent.Size = new Size(166, 106);
             btnAddEvent.TabIndex = 7;
-            btnAddEvent.Text = "Add Event to schedule";
+            btnAddEvent.Text = "Add Event to Schedule";
             btnAddEvent.UseVisualStyleBackColor = true;
             btnAddEvent.Click += btnAddEvent_Click;
             // 

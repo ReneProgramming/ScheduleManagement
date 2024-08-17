@@ -12,8 +12,8 @@ using ScheduleManagement;
 namespace ScheduleManagement.Migrations
 {
     [DbContext(typeof(ScheduleContext))]
-    [Migration("20240813132358_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240817030430_Create")]
+    partial class Create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace ScheduleManagement.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ScheduleManagement.ScheduleTask", b =>
+            modelBuilder.Entity("ScheduleManagement.ScheduleEvent", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,20 +33,20 @@ namespace ScheduleManagement.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("TaskDate")
+                    b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("TaskLocation")
+                    b.Property<string>("EventLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TaskName")
+                    b.Property<string>("EventName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("Events");
                 });
 #pragma warning restore 612, 618
         }

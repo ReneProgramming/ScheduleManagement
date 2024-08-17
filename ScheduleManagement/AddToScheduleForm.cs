@@ -43,9 +43,9 @@ namespace ScheduleManagement
             string tempLocation = txtEventLocation.Text.ToString();
             DateTime tempDate = dtEventDate.Value;
 
-            ScheduleTask newTask = new ScheduleTask(tempName, tempLocation, tempDate);
+            ScheduleEvent newEvent = new ScheduleEvent(tempName, tempLocation, tempDate);
 
-            dbContext.Add(newTask);
+            dbContext.Add(newEvent);
             dbContext.SaveChanges();
             this.Close();
         }
