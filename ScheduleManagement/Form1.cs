@@ -64,7 +64,27 @@ namespace ScheduleManagement
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
+            using ScheduleContext dbContext = new ScheduleContext();
 
+            // Fetch all tasks from the database
+            var tasks = dbContext.Events.ToList();
+
+            // Clear the ListView 
+            listViewSchedule.Items.Clear();
+
+            foreach (var task in tasks)
+            {
+                var item = new ListViewItem(new[]
+                {
+                   task.EventDate.ToString("g"), // General date/time
+                   task.EventName,
+                   task.EventLocation
+               });
+
+                item.Tag = task.Id; // Store the task ID for retrieval
+                listViewSchedule.Items.Add(item);
+            }
         }
     }
 }
+ 

@@ -56,7 +56,7 @@
             // 
             // dtEventDate
             // 
-            dtEventDate.Location = new Point(288, 242);
+            dtEventDate.Location = new Point(288, 232);
             dtEventDate.Name = "dtEventDate";
             dtEventDate.Size = new Size(200, 23);
             dtEventDate.TabIndex = 2;

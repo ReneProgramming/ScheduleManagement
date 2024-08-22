@@ -69,7 +69,7 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(304, 34);
+            lblTitle.Location = new Point(312, 30);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(195, 15);
             lblTitle.TabIndex = 4;
