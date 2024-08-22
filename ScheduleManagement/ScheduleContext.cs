@@ -20,8 +20,7 @@ namespace ScheduleManagement
     }
 }
 
-// Temporary developer log of commits for 
-// keeping track, can be ignored
+// Temporary developer log of commits (please ignore)
 
 // Installed required EF Core packages for 
 // database management, created schedule 
@@ -38,4 +37,8 @@ namespace ScheduleManagement
 // fashion in the ListView, added several 
 // labels on each form to help with navigation, 
 // changed some text to be capitalized in 
-// existing buttons. 
+// existing buttons.
+
+// Created checkboxes next to each item in the 
+// delete form, made it so a user can delete 
+// multiple events in the delete form

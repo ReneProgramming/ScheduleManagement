@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace ScheduleManagement
         private void CreateListView()
         {
             listViewEvents.View = View.Details;
+            listViewEvents.CheckBoxes = true;
             listViewEvents.Columns.Add("Event Date", 150, HorizontalAlignment.Left);
             listViewEvents.Columns.Add("Event Name", 150, HorizontalAlignment.Left);
             listViewEvents.Columns.Add("Event Location", -2, HorizontalAlignment.Left);
@@ -57,38 +59,35 @@ namespace ScheduleManagement
        {
            this.Close();
        }
-
+        
        private void btnDeleteEvent_Click(object sender, EventArgs e)
        {
-           if (listViewEvents.SelectedItems.Count > 0)
-           {
-               // Get the selected item
-               var selectedItem = listViewEvents.SelectedItems[0];
-               int taskId = (int)selectedItem.Tag;
+            using ScheduleContext dbContext = new ScheduleContext();
 
-               using ScheduleContext dbContext = new ScheduleContext();
+            if (listViewEvents.CheckedItems.Count > 0)
+            {
+                foreach (ListViewItem item in listViewEvents.CheckedItems)
+                {
+                    var selectedItem = listViewEvents.CheckedItems[0];
+                    int eventId = (int)selectedItem.Tag;
 
-               // Find the task by its ID
-               var task = dbContext.Events.Find(taskId);
-               if (task != null)
-               {
-                   // Remove the task from the database
-                   dbContext.Events.Remove(task);
-                   dbContext.SaveChanges();
+                    var evento = dbContext.Events.Find(eventId);
+                    if (evento != null)
+                    {
+                        // Remove the event from the database
+                        dbContext.Events.Remove(evento);
+                        dbContext.SaveChanges();
 
-                   // Inform the user and remove the item from the ListView
-                   MessageBox.Show("Event deleted successfully!");
-                   listViewEvents.Items.Remove(selectedItem);
-               }
-               else
-               {
-                   MessageBox.Show("Event not found.");
-               }
-           }
-           else
-           {
-               MessageBox.Show("Please select an event to delete.");
-           }
+                        // Remove the item from the ListView
+                        listViewEvents.Items.Remove(selectedItem);
+                    }
+                }
+                MessageBox.Show("Events deleted successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Select events to delete!");
+            }
        }
    }
 }
