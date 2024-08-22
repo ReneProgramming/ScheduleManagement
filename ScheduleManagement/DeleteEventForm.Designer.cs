@@ -31,6 +31,7 @@
             btnDeleteExit = new Button();
             listViewEvents = new ListView();
             btnDeleteEvent = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnDeleteExit
@@ -56,14 +57,24 @@
             btnDeleteEvent.Name = "btnDeleteEvent";
             btnDeleteEvent.Size = new Size(234, 116);
             btnDeleteEvent.TabIndex = 2;
-            btnDeleteEvent.Text = "Delete event";
+            btnDeleteEvent.Text = "Delete Event";
             btnDeleteEvent.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(113, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(185, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Click on a Date to Select an Event!";
             // 
             // DeleteEventForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(btnDeleteEvent);
             Controls.Add(listViewEvents);
             Controls.Add(btnDeleteExit);
@@ -71,6 +82,7 @@
             Text = "DeleteEventForm";
             Load += DeleteEventForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -78,5 +90,6 @@
         private Button btnDeleteExit;
         private ListView listViewEvents;
         private Button btnDeleteEvent;
+        private Label label1;
     }
 }

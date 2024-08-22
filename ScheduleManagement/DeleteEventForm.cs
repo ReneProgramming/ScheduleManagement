@@ -12,9 +12,19 @@ namespace ScheduleManagement
 {
    public partial class DeleteEventForm : Form
    {
-       public DeleteEventForm()
+        // Creates the list view with all needed components for displaying events
+        private void CreateListView()
+        {
+            listViewEvents.View = View.Details;
+            listViewEvents.Columns.Add("Event Date", 150, HorizontalAlignment.Left);
+            listViewEvents.Columns.Add("Event Name", 150, HorizontalAlignment.Left);
+            listViewEvents.Columns.Add("Event Location", -2, HorizontalAlignment.Left);
+        }
+
+        public DeleteEventForm()
        {
            InitializeComponent();
+           CreateListView();
            btnDeleteExit.Click += btnDeleteExit_Click;
            btnDeleteEvent.Click += btnDeleteEvent_Click;
        }
@@ -24,7 +34,7 @@ namespace ScheduleManagement
            using ScheduleContext dbContext = new ScheduleContext();
 
            // Fetch all tasks from the database
-           var tasks = dbContext.Tasks.ToList();
+           var tasks = dbContext.Events.ToList();
 
            // Clear the ListView 
            listViewEvents.Items.Clear();
@@ -32,10 +42,10 @@ namespace ScheduleManagement
            foreach (var task in tasks)
            {
                var item = new ListViewItem(new[]
-               {
-                   task.TaskDate.ToString("g"), // General date/time 
-                   task.TaskName,
-                   task.TaskLocation
+               { 
+                   task.EventDate.ToString("g"), // General date/time
+                   task.EventName,
+                   task.EventLocation 
                });
 
                item.Tag = task.Id; // Store the task ID for retrieval
@@ -59,11 +69,11 @@ namespace ScheduleManagement
                using ScheduleContext dbContext = new ScheduleContext();
 
                // Find the task by its ID
-               var task = dbContext.Tasks.Find(taskId);
+               var task = dbContext.Events.Find(taskId);
                if (task != null)
                {
                    // Remove the task from the database
-                   dbContext.Tasks.Remove(task);
+                   dbContext.Events.Remove(task);
                    dbContext.SaveChanges();
 
                    // Inform the user and remove the item from the ListView
@@ -82,3 +92,4 @@ namespace ScheduleManagement
        }
    }
 }
+ 

@@ -33,6 +33,9 @@
             btnDelete = new Button();
             lblTitle = new Label();
             listViewSchedule = new ListView();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // btnDisplay
@@ -41,7 +44,7 @@
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new Size(165, 107);
             btnDisplay.TabIndex = 0;
-            btnDisplay.Text = "Display Schedule";
+            btnDisplay.Text = "Update Schedule Display";
             btnDisplay.UseVisualStyleBackColor = true;
             btnDisplay.Click += btnDisplay_Click;
             // 
@@ -51,7 +54,7 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(165, 107);
             btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add to schedule";
+            btnAdd.Text = "Add Event";
             btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnDelete
@@ -66,11 +69,11 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(304, 34);
+            lblTitle.Location = new Point(312, 30);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(194, 15);
+            lblTitle.Size = new Size(195, 15);
             lblTitle.TabIndex = 4;
-            lblTitle.Text = "Welcome to the schedule  manager";
+            lblTitle.Text = "Welcome to the Schedule Manager!";
             // 
             // listViewSchedule
             // 
@@ -80,11 +83,41 @@
             listViewSchedule.TabIndex = 5;
             listViewSchedule.UseCompatibleStateImageBehavior = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(85, 326);
+            label1.Name = "label1";
+            label1.Size = new Size(194, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Press After Adding/Deleting Events!";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(375, 326);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Add an Event!";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(595, 326);
+            label3.Name = "label3";
+            label3.Size = new Size(91, 15);
+            label3.TabIndex = 8;
+            label3.Text = "Delete an Event!";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 511);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(listViewSchedule);
             Controls.Add(lblTitle);
             Controls.Add(btnDelete);
@@ -104,5 +137,8 @@
 		private Button btnDelete;
 		private Label lblTitle;
 		private ListView listViewSchedule;
-	}
+        private Label label1;
+        private Label label2;
+        private Label label3;
+    }
 }
